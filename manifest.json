@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "NPTEL Auto-Nav",
+  "version": "1.0",
+  "description": "Automates navigation from Swayam-NPTEL to Moovit course.",
+  "permissions": [],
+  "host_permissions": [
+    "https://onlinecourses.nptel.ac.in/*",
+    "https://swayam.gov.in/*",
+    "https://moovitol.vit.ac.in/*",
+    "https://swayam-sso.swayam2.ac.in/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://onlinecourses.nptel.ac.in/*",
+        "https://swayam.gov.in/*",
+        "https://moovitol.vit.ac.in/*",
+        "https://swayam-sso.swayam2.ac.in/*"
+      ],
+      "js": ["config.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
